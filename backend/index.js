@@ -20,8 +20,11 @@ mongoose
   .then(() => {
     console.log("Connected to database!");
     app.listen(port, () => {
-      console.log(`App lising at http://localhost:${port}`);
+      console.log(`App listening at http://localhost:${port}`);
     });
+  })
+  .catch((error) => {
+    console.error("Database connection error:", error);
   });
 
 app.post("/api/base", async (req, res) => {
@@ -38,6 +41,33 @@ app.post("/api/base", async (req, res) => {
 app.get("/api/base", async (req, res) => {
   try {
     const data = await Base.find({});
+    res.status(200).json(data);
+  } catch (error) {
+    res.status(500).json({
+      message: error.message,
+    });
+  }
+});
+
+app.get("/api/base/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+    const data = await Base.findById(id);
+    res.status(200).json(data);
+  } catch (error) {
+    res.status(500).json({
+      message: error.message,
+    });
+  }
+});
+
+app.put("/api/base/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+    const data = await Base.findByIdAndUpdate(id, req.body, { new: true });
+    if (!data) {
+      return res.status(404).json({ message: "Base not found!" });
+    }
     res.status(200).json(data);
   } catch (error) {
     res.status(500).json({
