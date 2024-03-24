@@ -14,9 +14,7 @@ app.use((req, res, next) => {
 
 const port = process.env.PORT || 5000;
 mongoose
-  .connect(
-    "mongodb+srv://yasasvigumma:pt1w4gOo9PwugUCT@merlin.y6yvre0.mongodb.net/test?retryWrites=true&w=majority"
-  )
+  .connect(process.env.MONGO_URL)
   .then(() => {
     console.log("Connected to database!");
     app.listen(port, () => {
