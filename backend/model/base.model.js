@@ -2,52 +2,21 @@ const mongoose = require("mongoose");
 
 const BaseSchema = mongoose.Schema(
   {
-    id: {
-      type: Number,
-      required: [true, "Please enter item id"],
-    },
-    title: {
+    userName: {
       type: String,
-      required: [true, "Please enter title of the item"],
+      required: true,
     },
-    description: {
+    password: {
       type: String,
+      required: true,
+    },
+    data: {
+      type: Array < Object > [],
       required: false,
+      default: [],
     },
-    price: {
-      type: Number,
-      required: true,
-      default: 0,
-    },
-    discountPercentage: {
-      type: Number,
-      required: true,
-      default: 0,
-    },
-    rating: {
-      type: Number,
-      required: true,
-      default: 0,
-    },
-    stock: {
-      type: Number,
-      required: true,
-      default: 0,
-    },
-    brand: {
+    profilePic: {
       type: String,
-      required: true,
-    },
-    category: {
-      type: String,
-      required: true,
-    },
-    thumbnail: {
-      type: String,
-      required: false,
-    },
-    images: {
-      type: Array < String > [],
       required: false,
     },
   },
