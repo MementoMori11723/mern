@@ -66,7 +66,22 @@ app.put("/api/base/:id", async (req, res) => {
     const { id } = req.params;
     const data = await Base.findByIdAndUpdate(id, req.body, { new: true });
     if (!data) {
-      return res.status(404).json({ message: "Base not found!" });
+      return res.status(404).json({ message: "user not found!" });
+    }
+    res.status(200).json(data);
+  } catch (error) {
+    res.status(500).json({
+      message: error.message,
+    });
+  }
+});
+
+app.delete("/api/base/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+    const data = await Base.findByIdAndDelete(id);
+    if (!data) {
+      return res.status(404).json({ message: "user not found!" });
     }
     res.status(200).json(data);
   } catch (error) {
