@@ -11,9 +11,8 @@ const BaseSchema = mongoose.Schema(
       required: true,
     },
     data: {
-      type: Array < Object > [],
+      type: [mongoose.Schema.Types.Mixed],
       required: false,
-      default: [],
     },
     profilePic: {
       type: String,
