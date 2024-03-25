@@ -1,4 +1,4 @@
-import { Navbar, MobNavBar } from "../import";
+import { Navbar, MobNavBar } from "../../components/import";
 const About = () => {
   return (
     <div>
