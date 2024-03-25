@@ -28,7 +28,7 @@ mongoose
 app.post("/api/base", async (req, res) => {
   try {
     const data = await Base.create(req.body);
-    res.status(200).json(data);
+    res.status(200).json({ message: "user created!" });
   } catch (error) {
     res.status(500).json({
       message: error.message,
@@ -36,7 +36,7 @@ app.post("/api/base", async (req, res) => {
   }
 });
 
-app.get("/api/base", async (req, res) => {
+app.get("/api/base", async (_, res) => {
   try {
     const data = await Base.find({});
     res.status(200).json(data);
@@ -66,7 +66,7 @@ app.put("/api/base/:id", async (req, res) => {
     if (!data) {
       return res.status(404).json({ message: "user not found!" });
     }
-    res.status(200).json(data);
+    res.status(200).json({ message: "user updated!" });
   } catch (error) {
     res.status(500).json({
       message: error.message,
@@ -81,7 +81,7 @@ app.delete("/api/base/:id", async (req, res) => {
     if (!data) {
       return res.status(404).json({ message: "user not found!" });
     }
-    res.status(200).json(data);
+    res.status(200).json({ message: "user deleted!" });
   } catch (error) {
     res.status(500).json({
       message: error.message,
