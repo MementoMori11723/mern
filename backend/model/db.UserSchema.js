@@ -1,9 +1,13 @@
 // import mongoose
 const mongoose = require("mongoose");
 
-// create a schema
-const BaseSchema = mongoose.Schema(
+// create a User schema
+const UserSchema = mongoose.Schema(
   {
+    id: {
+      type: Number,
+      required: true,
+    },
     userName: {
       type: String,
       required: true,
@@ -11,10 +15,6 @@ const BaseSchema = mongoose.Schema(
     password: {
       type: String,
       required: true,
-    },
-    data: {
-      type: [mongoose.Schema.Types.Mixed],
-      required: false,
     },
     profilePic: {
       type: String,
@@ -26,8 +26,4 @@ const BaseSchema = mongoose.Schema(
   }
 );
 
-// create a model
-const Base = mongoose.model("Base", BaseSchema);
-
-// export the model
-module.exports = Base;
+export default UserSchema;
