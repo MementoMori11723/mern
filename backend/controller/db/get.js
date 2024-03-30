@@ -1,5 +1,5 @@
 // import Base model
-const { User } = require("../model/db.model");
+const { User } = require("../../model/db.model");
 
 // get all users function
 const getUsers = async (_, res) => {

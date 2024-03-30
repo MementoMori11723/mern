@@ -18,4 +18,4 @@ const DataSchema = mongoose.Schema(
   }
 );
 
-export default DataSchema;
+module.exports = DataSchema;

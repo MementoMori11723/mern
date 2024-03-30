@@ -1,5 +1,5 @@
 // import Base model
-const { User } = require("../model/db.model");
+const { User } = require("../../model/db.model");
 
 // delete a user by id function
 const deleteUser = async (req, res) => {

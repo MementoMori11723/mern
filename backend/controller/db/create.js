@@ -1,5 +1,5 @@
 // import Base model
-const { User } = require("../model/db.model");
+const { User } = require("../../model/db.model");
 
 // create a user function
 const createUser = async (req, res) => {

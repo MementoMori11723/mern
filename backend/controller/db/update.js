@@ -1,5 +1,5 @@
 // import Base model
-const { User } = require("../model/db.model");
+const { User } = require("../../model/db.model");
 
 // update a user by id function
 const updateUser = async (req, res) => {
