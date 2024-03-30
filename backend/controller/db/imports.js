@@ -1,14 +1,14 @@
 // import CreateUser function
-const createUser = require("./db.createUser");
+const createUser = require("./create");
 
 // import GetUser functions
-const { getUsers, getUserById } = require("./db.getUser");
+const { getUsers, getUserById } = require("./get");
 
 // import UpdateUser function
-const updateUser = require("./db.updateUser");
+const updateUser = require("./update");
 
 // import DeleteUser function
-const deleteUser = require("./db.deleteUser");
+const deleteUser = require("./delete");
 
 // export functions
 module.exports = {

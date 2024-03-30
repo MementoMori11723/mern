@@ -1,7 +1,8 @@
 // importing libraries
 const express = require("express");
 const mongoose = require("mongoose");
-const router = require("./routes/db.routes");
+const dbRouter = require("./routes/db.routes");
+const dataRouter = require("./routes/data.routes");
 
 // environment variables
 require("dotenv").config();
@@ -22,7 +23,8 @@ app.use((req, res, next) => {
 });
 
 // routes
-app.use("/api/db", router);
+app.use("/api/db", dbRouter);
+app.use("/api/data", dataRouter);
 
 // connect to database
 mongoose

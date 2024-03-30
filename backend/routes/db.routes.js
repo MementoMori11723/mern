@@ -6,26 +6,26 @@ const {
   getUserById,
   updateUser,
   deleteUser,
-} = require("../controller/db.controller");
+} = require("../controller/db/imports");
 
-// create a router
-const router = express.Router();
+// create a dbRouter
+const dbRouter = express.Router();
 
 // define routes
 // create a user
-router.post("/", createUser);
+dbRouter.post("/", createUser);
 
 // get all users
-router.get("/", getUsers);
+dbRouter.get("/", getUsers);
 
 // get a user by id
-router.get("/:id", getUserById);
+dbRouter.get("/:id", getUserById);
 
 // update a user by id
-router.put("/:id", updateUser);
+dbRouter.put("/:id", updateUser);
 
 // delete a user by id
-router.delete("/:id", deleteUser);
+dbRouter.delete("/:id", deleteUser);
 
-// export the router
-module.exports = router;
+// export the dbRouter
+module.exports = dbRouter;
