@@ -1,5 +1,5 @@
 // import CreateUser function
-const createUser = require("./create");
+const { createUser } = require("./create");
 
 // import GetUser functions
 const { getUsers, getUserById } = require("./get");

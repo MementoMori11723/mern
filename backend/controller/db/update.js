@@ -17,4 +17,6 @@ const updateUser = async (req, res) => {
   }
 };
 
+// update a user data by id
+
 module.exports = updateUser;
