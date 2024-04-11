@@ -5,10 +5,13 @@ const { User, Data } = require("../../model/db.model");
 const createUser = async (req, res) => {
   try {
     // check if user already exists
-    const user = await User.find({ id: req.body.id });
-    if (!user) {
+    const user = await User.find({
+      userName: req.body.userName,
+      password: req.body.password,
+    });
+    if (user.length == 0) {
       const UserData = await User.create({
-        id: req.body.id,
+        id: Date.now(),
         userName: req.body.userName,
         password: req.body.password,
         profilePic: req.body?.profilePic || "",
@@ -19,8 +22,7 @@ const createUser = async (req, res) => {
       });
       res.status(200).json({
         message: "user & data created!",
-        userId: UserData._id,
-        dataId: data._id,
+        userId: UserData.id,
       });
     } else {
       res.status(409).json({ message: "user already exists!" });
