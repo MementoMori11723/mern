@@ -1,9 +1,8 @@
-import { Navbar, MobNavBar } from "../../components/import";
+import { Navbar } from "../../components/import";
 const Home = () => {
   return (
     <main>
       <Navbar />
-      <MobNavBar />
     </main>
   );
 };
