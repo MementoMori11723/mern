@@ -1,4 +1,4 @@
-import { Navbar } from "../../components/import";
+import { Navbar, Footer } from "../../components/import";
 const About = () => {
   return (
     <div>
@@ -17,6 +17,7 @@ const About = () => {
           eveniet.
         </p>
       </div>
+      <Footer />
     </div>
   );
 };
