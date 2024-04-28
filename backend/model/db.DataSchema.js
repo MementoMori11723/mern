@@ -4,13 +4,19 @@ const mongoose = require("mongoose");
 // create a Data schema
 const DataSchema = mongoose.Schema(
   {
-    id: {
+    _id: {
       type: Number,
       required: true,
     },
     data: {
-      type: [mongoose.Schema.Types.Mixed],
-      required: false,
+      cart:{
+        type: [mongoose.Schema.Types.Mixed],
+        required: false,
+      },
+      purchases:{
+        type: [mongoose.Schema.Types.Mixed],
+        required: false,
+      },
     },
   },
   {

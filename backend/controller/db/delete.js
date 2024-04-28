@@ -5,8 +5,8 @@ const { User, Data } = require("../../model/db.model");
 const deleteUser = async (req, res) => {
   try {
     const { id } = req.params;
-    await User.deleteOne({ id: id });
-    await Data.deleteOne({ id: id });
+    await User.deleteOne({ _id: id });
+    await Data.deleteOne({ _id: id });
     res.status(200).json({ message: "User & Data deleted!", userId: id });
   } catch (error) {
     res.status(500).json({

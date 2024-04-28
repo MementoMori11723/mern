@@ -11,18 +11,18 @@ const createUser = async (req, res) => {
     });
     if (user.length == 0) {
       const UserData = await User.create({
-        id: Date.now(),
+        _id: Date.now(),
         userName: req.body.userName,
         password: req.body.password,
         profilePic: req.body?.profilePic || "",
       });
       const data = await Data.create({
-        id: UserData?.id || UserData._id,
+        _id: UserData._id,
         data: [],
       });
       res.status(200).json({
         message: "user & data created!",
-        userId: UserData.id,
+        userId: UserData._id,
       });
     } else {
       res.status(409).json({ message: "user already exists!" });

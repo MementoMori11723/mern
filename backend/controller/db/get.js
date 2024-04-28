@@ -17,7 +17,7 @@ const getUsers = async (_, res) => {
 const getUserById = async (req, res) => {
   try {
     const { id } = req.params;
-    const data = await User.find({ id: id });
+    const data = await User.find({ _id: id });
     if (!data) {
       return res.status(404).json({ message: "user not found!" });
     }
@@ -33,7 +33,7 @@ const getUserById = async (req, res) => {
 const getDataById = async (req, res) => {
   try {
     const { id } = req.params;
-    const data = await Data.find({ id: id });
+    const data = await Data.find({ _id: id });
     if (!data) {
       return res.status(404).json({ message: "user not found!" });
     }

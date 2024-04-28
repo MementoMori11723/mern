@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 // create a User schema
 const UserSchema = mongoose.Schema(
   {
-    id: {
+    _id: {
       type: Number,
       required: true,
     },
