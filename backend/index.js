@@ -23,8 +23,8 @@ app.use((req, res, next) => {
 });
 
 // routes
-app.use("/api/db", dbRouter);
-app.use("/api/data", dataRouter);
+app.use("/db", dbRouter);
+app.use("/data", dataRouter);
 
 // connect to database
 mongoose
