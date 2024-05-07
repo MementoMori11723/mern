@@ -1,4 +1,4 @@
-import { Navbar, Footer } from "../../components/import";
+import { Navbar, Footer } from "../components/import";
 const Home = () => {
   return (
     <main>
