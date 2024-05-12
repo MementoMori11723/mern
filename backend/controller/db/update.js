@@ -36,9 +36,13 @@ const updateData = async (req, res) => {
     const { cart, purchases } = exd.data;
     const newData = {
       cart: Array.isArray(cart) ? [...cart, req.body.cart] : [req.body.cart],
-      purchases: Array.isArray(purchases) ? req.body.purchases ? [...purchases, req.body.purchases] : [...purchases] : [req.body.purchases]
+      purchases: Array.isArray(purchases)
+        ? req.body.purchases
+          ? [...purchases, req.body.purchases]
+          : [...purchases]
+        : [req.body.purchases],
     };
-    newData.purchases = newData.purchases.filter(item => item !== null);
+    newData.purchases = newData.purchases.filter((item) => item !== null);
     await Data.findByIdAndUpdate(id, { data: newData });
     res.status(200).json({ message: "Data updated!", dataId: id });
   } catch (error) {
@@ -53,17 +57,22 @@ const popData = async (req, res) => {
     if (!dataToUpdate) {
       return res.status(404).json({ message: "Data not found" });
     }
-    const cartItems = dataToUpdate.data.cart;
+    const cartItems = { item: dataToUpdate.data.cart, date: new Date() };
     dataToUpdate.data.purchases = dataToUpdate.data.purchases.concat(cartItems);
     dataToUpdate.data.cart = [];
-    dataToUpdate.data.purchases = dataToUpdate.data.purchases.filter(item => item !== null && item.length !== 0);
+    dataToUpdate.data.purchases = dataToUpdate.data.purchases.filter(
+      (item) => item !== null && item.length !== 0
+    );
     await dataToUpdate.save();
-    res.status(200).json({ message: "Data removed and moved to purchase history!", dataId: id });
+    res
+      .status(200)
+      .json({
+        message: "Data removed and moved to purchase history!",
+        dataId: id,
+      });
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
 };
-
-
 
 module.exports = { updateUser, updateData, popData };
