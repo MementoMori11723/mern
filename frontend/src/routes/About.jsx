@@ -1,8 +1,8 @@
-import { Navbar, Footer } from "../components/import";
+import { NavBar, Footer } from "../components/import";
 const About = () => {
   return (
     <div>
-      <Navbar />
+      <NavBar />
       <div className="container mx-auto p-8">
         <h1 className="text-2xl font-medium">About</h1>
         <p className="mt-4">This is the about page.</p>

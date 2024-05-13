@@ -1,14 +1,14 @@
 import React from "react";
 import { NavBar, Footer } from "../components/import";
 
-const Search = () => {
+const Cart = () => {
   return (
     <div>
       <NavBar />
-      <h1>Search</h1>
+      <h1>Cart</h1>
       <Footer />
     </div>
   );
 };
 
-export default Search;
+export default Cart;

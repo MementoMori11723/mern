@@ -1,26 +1,18 @@
-import { SearchBar, Cart, Login } from "./import";
+import { SearchBar, Cart, Login, Logo } from "./import";
 
-const Navbar = () => {
+const NavBar = () => {
   return (
-    <div>
+    <div className="flex items-center bg-amber-100">
       {/* Logo */}
-      <div>
-        <img src="/image.svg" alt="Logo" />
-        <div>
-          <a href="/">E-Cart</a>
-        </div>
-      </div>
-
+      <Logo />
       {/* Search Bar */}
       <SearchBar />
-
       {/* Cart */}
       <Cart />
-
       {/* Login / Register */}
       <Login />
     </div>
   );
 };
 
-export default Navbar;
+export default NavBar;
