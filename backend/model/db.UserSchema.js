@@ -8,14 +8,6 @@ const UserSchema = mongoose.Schema(
       type: Number,
       required: true,
     },
-    userName: {
-      type: String,
-      required: true,
-    },
-    password: {
-      type: String,
-      required: true,
-    },
     profilePic: {
       type: String,
       required: false,

@@ -1,9 +1,9 @@
-import { NavBar, Footer, Content } from "../components/import";
+import { NavBar, Footer, LandingPage } from "../components/import";
 const Home = () => {
   return (
     <main>
       <NavBar />
-      <Content />
+      <LandingPage />
       <Footer />
     </main>
   );

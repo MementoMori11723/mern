@@ -4,7 +4,10 @@ import { Link } from "react-router-dom";
 const SearchBar = () => {
   return (
     <Link to="/search">
-      <h1>SearchBar </h1>
+      <div className="search-bar">
+        <input type="text" placeholder="Search" />
+        <button>Search</button>
+      </div>
     </Link>
   );
 };

@@ -4,6 +4,8 @@ import {
   Login,
   Search,
   Cart,
+  ContactUs,
+  Help,
   History,
   PageNotFound,
 } from "./routes/imports";
@@ -19,6 +21,8 @@ function App() {
         <Route path="/search" element={<Search />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/history" element={<History />} />
+        <Route path="/contact" element={<ContactUs />} />
+        <Route path="/help" element={<Help />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     </BrowserRouter>
