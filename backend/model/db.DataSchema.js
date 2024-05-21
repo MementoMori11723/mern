@@ -8,15 +8,13 @@ const DataSchema = mongoose.Schema(
       type: Number,
       required: true,
     },
-    data: {
-      cart:{
-        type: [mongoose.Schema.Types.Mixed],
-        required: false,
-      },
-      purchases:{
-        type: [mongoose.Schema.Types.Mixed],
-        required: false,
-      },
+    cart: {
+      type: [mongoose.Schema.Types.Mixed],
+      required: false,
+    },
+    purchases: {
+      type: [mongoose.Schema.Types.Mixed],
+      required: false,
     },
   },
   {
