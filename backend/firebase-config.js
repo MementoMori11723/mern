@@ -1,14 +1,21 @@
 const { initializeApp } = require("firebase/app");
 const { getAuth } = require("firebase/auth");
 
+require("dotenv").config();
+
+const apiKey = process.env.FIREAPI;
+const appId = process.env.FIREID;
+const measurementId = process.env.FIREMESUREID;
+const messagingSenderId = process.env.FIREMESSAGEID;
+
 const firebaseConfig = {
-  apiKey: "AIzaSyDjK9ewRwzgRcLdA9X9dv6OC5szE0bxQ58",
+  apiKey: apiKey,
   authDomain: "mern-342e9.firebaseapp.com",
   projectId: "mern-342e9",
   storageBucket: "mern-342e9.appspot.com",
-  messagingSenderId: "1012064809945",
-  appId: "1:1012064809945:web:49aa9f57c587d9384f1fc8",
-  measurementId: "G-8NQM6HC9VD",
+  messagingSenderId: messagingSenderId,
+  appId: appId,
+  measurementId: measurementId,
 };
 
 const app = initializeApp(firebaseConfig);
